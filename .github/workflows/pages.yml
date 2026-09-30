@@ -1,4 +1,4 @@
-name: Deploy Hugo to Pages
+name: Build Astro Pages
 on:
   push:
     branches: [main]
@@ -7,30 +7,33 @@ permissions:
   contents: read
   pages: write
   id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: peaceiris/actions-hugo@v3
+      - uses: pnpm/action-setup@v4
         with:
-          hugo-version: '0.167.0'
-          extended: true
-      - uses: actions/configure-pages@v5
-        id: pages
-      - run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+        env:
+          SITE_URL: https://cordherald39.github.io
+          ALLOW_INDEX: 'true'
+          DEPLOY_BASE: /clash-papermod/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: dist
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment

@@ -1,0 +1,17 @@
+{
+  "name": "clash-papermod-astro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4205",
+    "build": "astro build && node scripts/check.mjs",
+    "preview": "astro preview --host 127.0.0.1 --port 4205",
+    "test": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "astro": "7.1.4",
+    "marked": "18.0.13",
+    "yaml": "2.9.0"
+  },
+  "packageManager": "pnpm@11.19.0"
+}

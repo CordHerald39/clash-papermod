@@ -1,21 +1,13 @@
-# Clash 配置笔记 · PaperMod
+# Clash 科技官网 · Astro
 
-使用真实上游主题，vendored在themes/PaperMod，保留LICENSE。
+本地重设计，未发布。旧Hugo源码已备份到工作区私密维护教程/redesign-backups，正文保留content路径。
 
-## 本地预览
+## 开发
 
-安装Hugo extended 0.167.0，执行：
+Node.js 24，pnpm 11。运行pnpm install，pnpm build，pnpm preview（端口4205）。
 
-```sh
-hugo server --bind 127.0.0.1 --port 4195 --baseURL http://127.0.0.1:4195/ --disableFastRender
-```
+生产候选构建静态HTML并保留noindex，发布前需单独决定索引策略。工作流仅手动触发，无自动push部署。GitHub远程保持原仓库。
 
-正式构建：`hugo --minify`。输出public，源文章在content/blog，每篇一个Markdown。
+## 文章
 
-## GitHub Pages
-
-仓库Settings → Pages选择GitHub Actions。工作流由configure-pages获取base_url，支持仓库子路径。hugo.json存储正式GitHubPages地址，使用自定义域名时修改baseURL并在Pages中配置域名。
-
-## 内容导入
-
-`node scripts/import-content.mjs article.json`校验后写入content/blog。输入status=draft时正式构建不发布。不要把API密钥放入仓库。
+content/blog每篇一个Markdown；现有Hugo relref由内容加载器兼容转换。统一JSON导入：node scripts/import-content.mjs 文件.json。成功导入后pnpm build更新页面、RSS与网站地图。

@@ -1,0 +1,3 @@
+import {articles,config} from '../lib/content.mjs';
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+export const GET=()=>new Response('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>'+esc(config.title)+'</title><link>'+config.site+'</link><description>'+esc(config.description)+'</description>'+articles.map(p=>'<item><title>'+esc(p.title)+'</title><link>'+new URL(p.slug+'/',config.site).href+'</link><guid>'+new URL(p.slug+'/',config.site).href+'</guid><pubDate>'+new Date(p.date||'2026-09-30').toUTCString()+'</pubDate><description>'+esc(p.description)+'</description></item>').join('')+'</channel></rss>',{headers:{'Content-Type':'application/xml'}});

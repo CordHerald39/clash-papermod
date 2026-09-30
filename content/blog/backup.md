@@ -27,3 +27,5 @@
 等新设备达到预期状态后，再处理旧设备。退出客户端时关闭系统代理，确认直连正常；删除含有令牌的导出文件前，先确认私人备份位置和后续是否需要撤销旧令牌。
 
 来源：[Clash Verge Rev项目](https://github.com/clash-verge-rev/clash-verge-rev)、[FlClash项目](https://github.com/chen08209/FlClash)。两个项目的发布入口可在[下载页]({{< relref "downloads" >}})找到。
+
+进一步阅读：[换电脑前，Clash 哪些设置需要记录和备份](../migration-record/)。
