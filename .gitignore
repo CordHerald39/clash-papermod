@@ -1,0 +1,8 @@
+public/
+resources/
+_gen/
+.hugo_build.lock
+.hugo_cache/
+reports/
+.rankup/
+node_modules/

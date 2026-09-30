@@ -1,0 +1,108 @@
+{
+  "baseURL": "https://cordherald39.github.io/clash-papermod/",
+  "languageCode": "zh-CN",
+  "defaultContentLanguage": "zh",
+  "hasCJKLanguage": true,
+  "title": "Clash 配置笔记",
+  "theme": "PaperMod",
+  "enableRobotsTXT": true,
+  "disableKinds": [
+    "taxonomy",
+    "term"
+  ],
+  "outputs": {
+    "home": [
+      "HTML",
+      "RSS"
+    ],
+    "section": [
+      "HTML",
+      "RSS"
+    ],
+    "page": [
+      "HTML"
+    ]
+  },
+  "markup": {
+    "goldmark": {
+      "renderer": {
+        "unsafe": true
+      }
+    },
+    "highlight": {
+      "noClasses": false
+    }
+  },
+  "menu": {
+    "main": [
+      {
+        "name": "下载",
+        "pageRef": "/downloads",
+        "weight": 1
+      },
+      {
+        "name": "手机版",
+        "pageRef": "/mobile",
+        "weight": 2
+      },
+      {
+        "name": "电脑版",
+        "pageRef": "/desktop",
+        "weight": 3
+      },
+      {
+        "name": "教程",
+        "pageRef": "/tutorials",
+        "weight": 4
+      },
+      {
+        "name": "博客",
+        "pageRef": "/blog",
+        "weight": 5
+      },
+      {
+        "name": "关于",
+        "pageRef": "/about",
+        "weight": 6
+      }
+    ]
+  },
+  "params": {
+    "description": "Clash 官网入口导航、手机与电脑下载、订阅配置教程和故障排查。",
+    "author": "Clash 编辑组",
+    "defaultTheme": "light",
+    "disableThemeToggle": false,
+    "ShowReadingTime": true,
+    "ShowBreadCrumbs": true,
+    "ShowPostNavLinks": true,
+    "ShowToc": true,
+    "TocOpen": true,
+    "mainSections": [
+      "post"
+    ],
+    "homeInfoParams": {
+      "Title": "Clash 配置，按问题读",
+      "Content": "安装包该选哪个？订阅为何返回网页？这里记录手机与电脑使用中的具体问题。先从上方下载入口选择客户端，再按下方文章处理配置。"
+    },
+    "navbar": {
+      "displayTitle": true,
+      "displayLogo": false
+    },
+    "footer": {
+      "displayCopyright": true,
+      "displayPoweredBy": true
+    },
+    "theme": {
+      "default": "light",
+      "displayToggle": true
+    },
+    "search": {
+      "enable": true,
+      "type": "flexsearch"
+    },
+    "page": {
+      "width": "normal"
+    },
+    "DateFormat": "2006年1月2日"
+  }
+}
